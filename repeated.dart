@@ -1,19 +1,13 @@
 void main(){
 	var s = "abaabaabaa";
-	var n = 1000000;
+	var n = 1000000000000;
 	
-	var numberOfA = 0;
 
-	var stringIndex = 0;
+	int nStrings = (n/s.length).toInt();
+	int rString = n%s.length;
 
-	for(var i = 0; i < n; i ++){
-		if(stringIndex == s.length -1){
-			stringIndex = 0;
-		}
-		if(s[stringIndex] == 'a')
-			numberOfA++;
-		stringIndex++;
-	}
-	print(numberOfA);
+	var nOfA = nStrings*(s.split('a').length - 1) + (s.substring(0,rString).split('a').length -1);
+	
+	print(nOfA);
 }
 
